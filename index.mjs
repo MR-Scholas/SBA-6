@@ -6,6 +6,8 @@ const PORT=process.env.PORT||3001
 const app=express()
 
 import sandwiches from "./routes/sandwiches.mjs"
+import desserts from "./routes/desserts.mjs"
+import comments from "./routes/comments.mjs"
 
 app.use(express.json())
 
@@ -15,6 +17,8 @@ app.get("/", (req,res)=>
 })
 
 app.use("/sandwiches",sandwiches)
+app.use("/desserts",desserts)
+app.use("/comments",comments)
 
 //Error-handling
 app.use((err,_req,res,next)=>
